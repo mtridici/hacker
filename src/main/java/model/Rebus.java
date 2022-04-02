@@ -88,5 +88,35 @@ public class Rebus implements Serializable {
     public String getRebusName() {
         return this.name;
     }
+    
+        // EQUALS + HASH CODE override
+        // confrontare due oggetti usando i metodi hascode ed equals "originali"
+        // restituisce "false" come risultato poiché si confrontano gli indirizzi 
+        //di memoria e non i "valori" 
+    
+    @Override
+    public int hashCode() {
+	int hash = 7;
+	hash = 87 * hash + this.id;
+	return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj) {
+	    return true;
+	}
+	if (obj == null) {
+	    return false;
+	}
+	if (getClass() != obj.getClass()) {
+	    return false;
+	}
+	final Rebus other = (Rebus) obj;
+	if (this.id != other.id) {
+	    return false;
+	}
+	return true;
+    }
 
 } // fine della classe principale "Rebus"

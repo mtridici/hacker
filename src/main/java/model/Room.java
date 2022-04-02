@@ -148,10 +148,39 @@ public class Room implements Serializable {
 	return east;
     }
 
-//    // Oggetti presenti nella stanza
-//    public List<Item> getItems() {
-//	return list;
-//    }
+    // EQUALS + HASH CODE override
+    
+    // EQUALS + HASH CODE override
+    // confrontare due oggetti usando i metodi hascode ed equals "originali"
+    // restituisce "false" come risultato poiché si confrontano gli indirizzi 
+    //di memoria e non i "valori" 
+    
+    @Override
+    public int hashCode() {
+	int hash = 3; //prime number
+	hash = 83 * hash + this.id;
+	return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj) {
+	    return true;
+	}
+	if (obj == null) {
+	    return false;
+	}
+	if (getClass() != obj.getClass()) {
+	    return false;
+	}
+        
+	final Room other = (Room) obj;
+        
+	if (this.id != other.id) {
+	    return false;
+	}
+	return true;
+    }
 
 
 } // fine della classe principale "Room"

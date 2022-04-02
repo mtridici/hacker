@@ -296,7 +296,8 @@ public class Game extends Collector {
     }
 
     public  boolean isCompleted(Rebus rebus) {
-        if(rebus.isSolved() && rebus.name.contains("rebus11")) {
+//        if(rebus.isSolved() && rebus.name.contains("rebus11")) {
+        if(rebus.isSolved() && rebus.equals(rebus11)) {
             setCurrentRoom(victory);
             completed = true;
         }
