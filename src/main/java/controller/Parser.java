@@ -30,6 +30,8 @@ public class Parser extends Collector{
 	    phrase = phrase.replace(extra, " ");
 	}
         
+        //split("\\s+") will split the string into string of array with separator
+        //as space or multiple spaces. \s+ is a regular expression for one or more spaces
         words = phrase.split("\\s+|\\'"); // Dividi la frase digitata in più parole
 
         
